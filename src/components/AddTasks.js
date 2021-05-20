@@ -1,24 +1,29 @@
-const AddTasks = ({ newTask, setNewTask, addTask }) => {
-  const inputText = {
-    padding: "0.5rem 0.75rem",
-    fontSize: "1rem",
-  };
+import { useTask } from "../context/TasksContext";
 
-  const formStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-  };
+const inputText = {
+  padding: "0.5rem 0.75rem",
+  fontSize: "1rem",
+};
 
-  const btnStyle = {
-    fontSize: "1rem",
-    padding: "0.5rem 0.75rem",
-    marginLeft: "0.5rem",
-    backgroundColor: "#198754",
-    color: "white",
-    border: "none",
-  };
+const formStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+};
+
+const btnStyle = {
+  fontSize: "1rem",
+  padding: "0.5rem 0.75rem",
+  marginLeft: "0.5rem",
+  backgroundColor: "#198754",
+  color: "white",
+  border: "none",
+};
+
+const AddTasks = () => {
+  const { newTask, setNewTask, addTask } = useTask();
+
   return (
-    <form onSubmit={addTask} style={formStyle}>
+    <form onSubmit={addTask} style={formStyle} className="add-tasks">
       <input
         value={newTask}
         type="text"

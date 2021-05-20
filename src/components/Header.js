@@ -1,7 +1,7 @@
 const Header = () => {
   return (
     <header>
-      <h1>Task Tracker</h1>
+      <h1 style={{ textAlign: "center" }}>Task Tracker</h1>
     </header>
   );
 };
